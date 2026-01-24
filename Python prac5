@@ -1,0 +1,30 @@
+class Fraction:
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
+
+
+def largest_fraction(f1, f2, f3):
+    largest = f1
+
+    if f2.numerator * largest.denominator > largest.numerator * f2.denominator:
+        largest = f2
+
+    if f3.numerator * largest.denominator > largest.numerator * f3.denominator:
+        largest = f3
+
+    return largest   # returns object reference
+
+
+def main():
+    f1 = Fraction(1, 2)
+    f2 = Fraction(3, 4)
+    f3 = Fraction(2, 3)
+
+    result = largest_fraction(f1, f2, f3)
+
+    print(f"Largest fraction is: {result.numerator}/{result.denominator}")
+
+
+if __name__ == "__main__":
+    main()
